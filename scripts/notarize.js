@@ -3,12 +3,8 @@ const path = require('path')
 const { notarize } = require('@electron/notarize')
 
 exports.default = async function notarizing(context) {
-  const { electronPlatformName, appOutDir } = context
-  if (
-    electronPlatformName !== 'darwin' ||
-    !process.env.APPLE_ID ||
-    !process.env.APPLE_PASSWORD
-  ) {
+  const { electronPlatformName } = context
+  if (electronPlatformName !== 'darwin') {
     return
   }
 
@@ -27,9 +23,6 @@ exports.default = async function notarizing(context) {
     )
     return
   }
-
-  console.log('appName', appName)
-  console.log('appBundleId', appBundleId)
 
   return await notarize({
     tool: 'notarytool',
