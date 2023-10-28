@@ -22,6 +22,7 @@ This is a simple electron project that contains electron-builder setup and elect
 ```
 export APPLE_ID="<Your Apple ID>"
 export APPLE_ID_PASSWORD="<Your App Specific Password>"
+export APPLE_TEAM_ID="<Your Apple Team ID>"
 export GH_TOKEN="<YOUR_TOKEN_HERE>"
 ```
 
